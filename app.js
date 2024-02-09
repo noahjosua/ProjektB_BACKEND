@@ -22,21 +22,11 @@ app.use('/images', express.static(path.join('images'))); // Serve static images 
 
 // Set up CORS headers for handling cross-origin requests
 app.use(cors({
-  origin: 'https://projektsammlung-webentwicklung-basics.netlify.app',
+  origin: '*', // 'https://projektsammlung-webentwicklung-basics.netlify.app'
   methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS', 'PUT'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
   credentials: true
 }));
-
-/*
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS, PUT');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  next();
-});
-*/
 
 // Set up routes for projects and user APIs
 app.use('/api/projects', projectRoutes);

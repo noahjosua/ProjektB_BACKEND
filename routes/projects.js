@@ -53,8 +53,8 @@ router.get('/:id', (req, res, next) => {
 });
 
 // Route to get projects by creator ID
-router.get('/creator/:creatorId', (req, res, next) => {
-  Project.find({ creator: req.params.creatorId }).then(documents => {
+router.get('/creator/:id', (req, res, next) => {
+  Project.find({ creator: req.params.id }).then(documents => {
     res.status(200).json({
       message: 'Projects fetched successfully!',
       projects: documents
@@ -164,7 +164,7 @@ router.delete('/:id', checkAuth, (req, res, next) => {
     }
 
     // Check authorization for deletion
-    if (req.userData.userId === project.creator || req.userData.isAdmin) {
+    if (req.userData.userId == project.creator || req.userData.isAdmin) {
       // Delete the project from the database
       Project.deleteOne({ _id: req.params.id }).then(result => {
         if (result.deletedCount > 0) {
