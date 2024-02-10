@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node server.js",
-    "compodoc": "npx compodoc -p tsconfig.doc.json"
+    "compodoc": "npx compodoc -p tsconfig.doc.json",
+    "swagger-autogen": "node swagger.js"
   },
   "private": true,
   "dependencies": {
+    "and": "^0.0.3",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.1",
@@ -16,6 +18,8 @@
     "mongoose-unique-validator": "^4.0.0",
     "multer": "^1.4.5-lts.1",
     "rxjs": "~7.8.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0",
     "tslib": "^2.6.2",
     "zone.js": "^0.14.2"
   },

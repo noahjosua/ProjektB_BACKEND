@@ -31,8 +31,8 @@ const storage = multler.diskStorage({
   }
 });
 
-// Route to get all projects
 router.get('', (req, res, next) => {
+  // #swagger.description = 'Endpoint to fetch all projects.'
   Project.find().then(documents => {
     res.status(200).json({
       message: 'Projects fetched successfully!',
@@ -41,8 +41,8 @@ router.get('', (req, res, next) => {
   });
 });
 
-// Route to get a specific project by ID
 router.get('/:id', (req, res, next) => {
+  // #swagger.description = 'Endpoint to fetch a specific project by ID.'
   Project.findById(req.params.id).then(project => {
     if (project) {
       res.status(200).json(project);
@@ -52,8 +52,8 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
-// Route to get projects by creator ID
 router.get('/creator/:id', (req, res, next) => {
+  // #swagger.description = 'Endpoint to fetch all projects created by a specific user.'
   Project.find({ creator: req.params.id }).then(documents => {
     res.status(200).json({
       message: 'Projects fetched successfully!',
@@ -62,8 +62,8 @@ router.get('/creator/:id', (req, res, next) => {
   });  
 });
 
-// Route to handle image uploads
 router.post('/upload', checkAuth, async (req, res, next) => {
+  // #swagger.description = 'Endpoint to upload images.'
   try {
     res.json({ message: 'Images uploaded successfully!' });
   } catch (error) {
@@ -71,8 +71,8 @@ router.post('/upload', checkAuth, async (req, res, next) => {
   }
 });
 
-// Route to add a new project
 router.post('/', checkAuth, multler({ storage: storage }).array('images'), (req, res, next) => {
+  // #swagger.description = 'Endpoint to add a new project.'
   // Parse project data from the request body
   const projectData = JSON.parse(req.body.project);
   const url = req.protocol + '://' + req.get('host');
@@ -103,8 +103,8 @@ router.post('/', checkAuth, multler({ storage: storage }).array('images'), (req,
   });
 });
 
-// Route to update an existing project by ID
 router.put('/:id', checkAuth, multler({ storage: storage }).array('images'), (req, res, next) => {
+  // #swagger.description = 'Endpoint to update a project by ID.'
   const projectId = req.params.id;
   const projectData = JSON.parse(req.body.project);
   const url = req.protocol + '://' + req.get('host');
@@ -155,8 +155,8 @@ router.put('/:id', checkAuth, multler({ storage: storage }).array('images'), (re
   });
 });
 
-// Route to delete a project by ID
 router.delete('/:id', checkAuth, (req, res, next) => {
+  // #swagger.description = 'Endpoint to delete a project by ID.'
   // Find the project by ID
   Project.findOne({ _id: req.params.id }).then(project => {
     if (!project) {

@@ -6,8 +6,8 @@ const User = require('../models/user');
 const checkAuth = require('../middleware/check-auth');
 require('dotenv').config();
 
-// Route to handle user signup
 router.post('/signup', checkAuth, (req, res, next) => {
+    // #swagger.description = 'Endpoint to create a new user.'
     // Hash the user's password before saving to the database
     bcrypt.hash(req.body.password, 10) 
         .then(hash => {
@@ -33,8 +33,8 @@ router.post('/signup', checkAuth, (req, res, next) => {
         });
 });
 
-// Route to handle user login
 router.post('/login', (req, res, next) => {
+    // #swagger.description = 'Endpoint to authenticate a user.'
     // Find the user in the database based on email
     User.findOne({ email: req.body.email })
         .then(user => {
@@ -79,7 +79,10 @@ router.post('/login', (req, res, next) => {
 
 // Placeholder route for handling user profile (to be implemented)
 router.post('/profile', checkAuth, (req, res, next) => {
-
+    // #swagger.description = 'Endpoint to retrieve user profile.'
+    res.status(200).json({
+        message: 'User profile retrieved!'
+    });
 });
 
 module.exports = router;
