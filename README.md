@@ -5,7 +5,6 @@ Hierbei handelt es sich um ein Node.js Backend mit Express.js und Mongo DB (>= v
 
 ## Inhaltsverzeichnis
 - [Installation](#installation)
-- [Initialen Benutzer hinzufügen](#initialenBenutzer)
 - [Verwendung](#verwendung)
 
 ### Installation
