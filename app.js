@@ -26,10 +26,10 @@ app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile)) // Serve the Swag
 
 // Set up CORS headers for handling cross-origin requests
 app.use(cors({
-  origin: '*', 
+  origin: '*', // should be replaced with the actual client's URL
   methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS', 'PUT'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
-  //credentials: true
+  credentials: true
 }));
 
 // Set up routes for projects and user APIs
