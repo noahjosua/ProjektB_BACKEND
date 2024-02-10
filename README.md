@@ -18,10 +18,12 @@ npm install
 2. Erstelle eine `.env`-Datei auf der Root-Ebene mit den folgenden Variablen (case-sensitive!):
     ```
     DATABASE_URL=<dieUrlDeinerLokalenMongoDb>
-    PORT=<gewünschterPort> **muss mit dem im [Frontend](https://github.com/noahjosua/ProjektB_FRONTEND) verwendeten Port übereinstimmen!**
+    PORT=<gewünschterPort> 
     TOKEN_SECRET=<tokenSecret>
     ```
-3. Generiere das Token Secret:
+    **Der Port muss mit dem im [Frontend](https://github.com/noahjosua/ProjektB_FRONTEND) verwendeten Port übereinstimmen!**
+   
+4. Generiere das Token Secret:
     - Füge in `app.js` vor `module.exports = app;` die folgende Zeile ein:
      ```javascript
      console.log(require('crypto').randomBytes(64).toString('hex'));
