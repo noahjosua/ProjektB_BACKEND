@@ -4,6 +4,7 @@ const router = express.Router();
 const checkAuth = require('../middleware/check-auth');
 require('dotenv').config();
 const multler = require('multer');
+const fs = require('fs');
 
 // Define MIME types for image validation
 const MIME_TYPE_MAP = {
@@ -168,6 +169,15 @@ router.delete('/:id', checkAuth, (req, res, next) => {
       // Delete the project from the database
       Project.deleteOne({ _id: req.params.id }).then(result => {
         if (result.deletedCount > 0) {
+          for(let path of project.imagesPaths) {
+            const filename = path.split('/images/')[1];
+            fs.unlink('images/' + filename, (err) => {
+              if (err) {
+                console.error(err);
+                return;
+              }
+            });
+          }
           res.status(200).json({ message: 'Project deleted!' });
         }
         else {
