@@ -78,6 +78,6 @@ npm install
 
     - Backend starten mit `server.js`
     - Frontend starten mit `ng serve`
-    Die Anwendung ist unter http://localhost:4200 erreichbar. 
+    - Die Anwendung ist unter http://localhost:4200 erreichbar. 
 - Die API-Dokumentation wurde mit [Swagger](https://swagger-autogen.github.io/docs/) erstellt und ist unter folgendem Link zu finden: http://localhost:3000/doc/
 
