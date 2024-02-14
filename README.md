@@ -1,7 +1,7 @@
 # HAW Hamburg: Studierendenprojekte 
 
 Willkommen im Backend Repository! 
-Hierbei handelt es sich um ein Node.js Backend mit Express.js und Mongo DB (>= v7.0.1). 
+Hierbei handelt es sich um ein Node.js (v18.17.1) Backend mit Express.js und Mongo DB (>= v7.0.1). 
 
 ## Inhaltsverzeichnis
 - [Installation](#installation)
@@ -26,7 +26,7 @@ npm install
 
 3. Installation und Konfiguarion MongoDB unter Windows
     - Installiere die [MongoDB Community Edition](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/#std-label-install-mdb-community-windows)
-        - Lade dir dazu den MongoDB Community `.msi` installer herunter
+        - Lade dir dazu den MongoDB Community `.msi` installer herunter (Version >= 7.0.1)
         - Stelle im Installationsprozess zur einfacheren Handhabung sicher, dass der Haken bei "Install MongoDB Compass" gesetzt ist (GUI)
     - Installiere die MongoDB Shell [mongosh](https://www.mongodb.com/docs/mongodb-shell/install/) 
         - Stelle sicher, dass du diese von einem `.zip` File installierst
@@ -79,5 +79,4 @@ npm install
     - Backend starten mit `server.js`
     - Frontend starten mit `ng serve`
     - Die Anwendung ist unter http://localhost:4200 erreichbar. 
-- Die API-Dokumentation wurde mit [Swagger](https://swagger-autogen.github.io/docs/) erstellt und ist unter folgendem Link zu finden: http://localhost:3000/doc/
-
+- Die API-Dokumentation wurde mit [Swagger](https://swagger-autogen.github.io/docs/) erstellt und ist unter folgendem Link zu finden: http://localhost:8080/doc/

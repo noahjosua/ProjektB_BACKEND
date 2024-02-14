@@ -5,7 +5,7 @@
     "description": "Die API ermöglicht den Zugriff auf die Datenbank der Studierendenprojekte der HAW Hamburg. Sie ermöglicht das Anlegen, Bearbeiten und Löschen von Projekten sowie das Anlegen von Benutzerkonten. Die API ist durch JWT-Authentifizierung geschützt.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
     "http"
